@@ -57,7 +57,18 @@
       "started_at": "2026-10-10T07:42:33.312Z",
       "finished_at": "2026-10-10T07:42:33.312Z",
       "updated_by": "api-key:for-chatgpt-test-2"
+    },
+    "content": {
+      "status": "in_progress",
+      "summary": "All eight categories and first two substantive Overview lessons saved. Continuing 16 What-is, 24 STEP lessons, 3 conclusion items, source/Simulator validation.",
+      "outputs": {
+        "categories_created": 8,
+        "items_target": 45
+      },
+      "started_at": "2026-10-10T07:50:37.513Z",
+      "finished_at": null,
+      "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T07:45:01.737Z"
+  "updated_at": "2026-10-10T07:50:37.513Z"
 }
