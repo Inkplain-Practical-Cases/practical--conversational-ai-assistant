@@ -60,15 +60,17 @@
     },
     "content": {
       "status": "in_progress",
-      "summary": "All eight categories and first two substantive Overview lessons saved. Continuing 16 What-is, 24 STEP lessons, 3 conclusion items, source/Simulator validation.",
+      "summary": "Eight active categories now contain 45 lessons; STEP-2 and STEP-4–6 plus Conclusion authored/updated and read back. Stage 4 NOT done: CRD-tree/matrix coverage and complete source-link QA remain, and STEP-4 fixture does not enforce real tenant ownership.",
       "outputs": {
         "categories_created": 8,
-        "items_target": 45
+        "items_target": 45,
+        "items_saved": 45,
+        "quality_review_pending": true
       },
       "started_at": "2026-10-10T07:50:37.513Z",
       "finished_at": null,
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T07:50:37.513Z"
+  "updated_at": "2026-10-10T08:15:33.579Z"
 }
