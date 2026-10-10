@@ -9,11 +9,11 @@
     }
   ],
   "step": {
-    "no": 4,
+    "no": 5,
     "of": 6,
-    "title": "Add domain workflow",
-    "branch": "step-04-execute-allowlisted-customer-tools",
-    "previous": "STEP-3.crd",
+    "title": "Implement reliability policy",
+    "branch": "step-05-handle-bounded-provider-failures",
+    "previous": "STEP-4.crd",
     "removed": []
   },
   "components": [
@@ -287,12 +287,40 @@
       "operations": [],
       "outputs": [],
       "attributes": {},
+      "step_change": "unchanged"
+    },
+    {
+      "id": "be.step5_policy",
+      "name": "step5_policy",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "Domain-specific guarded error/policy boundary",
+      "flows": [
+        "chat"
+      ],
+      "source": {
+        "file": "app/features/chat/services/retry_policy.py",
+        "symbol": "policy",
+        "lines": [
+          1,
+          40
+        ]
+      },
+      "owner": "chat",
+      "component_reason": "Independent correctness/reliability rule",
+      "status": "observed",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {},
       "step_change": "added"
     }
   ],
   "dependencies": [],
   "unresolved": [],
   "source": {
-    "revision": "step-04-execute-allowlisted-customer-tools"
+    "revision": "step-05-handle-bounded-provider-failures"
   }
 }
