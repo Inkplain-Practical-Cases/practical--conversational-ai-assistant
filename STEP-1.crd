@@ -1,0 +1,183 @@
+{
+  "format": "inkplain-crd",
+  "version": "1.0",
+  "name": "Conversational Assistant STEP-1",
+  "flows": [
+    {
+      "id": "chat",
+      "name": "Receive chat"
+    }
+  ],
+  "step": {
+    "no": 1,
+    "of": 6,
+    "title": "Receive validated chat requests",
+    "branch": "step-01-receive-validated-chat-requests",
+    "previous": null,
+    "removed": []
+  },
+  "components": [
+    {
+      "id": "be.receive_chat",
+      "name": "receive_chat",
+      "kind": "function",
+      "side": "backend",
+      "layer": "door",
+      "description": "receive_chat implements the STEP-1 chat path.",
+      "flows": [
+        "chat"
+      ],
+      "source": {
+        "file": "app/features/chat/router.py",
+        "symbol": "receive_chat",
+        "lines": [
+          1,
+          50
+        ]
+      },
+      "owner": "feature_chat",
+      "component_reason": "Separately testable layer boundary.",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "in-0",
+          "name": "ChatRequest",
+          "description": "ChatRequest"
+        }
+      ],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-0",
+          "title": "handle_chat",
+          "origin": "imported",
+          "description": "handle_chat",
+          "show": true,
+          "calls": {
+            "component": "be.handle_chat",
+            "type": "call",
+            "label": "delegates",
+            "evidence": "app/features/chat/router.py"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "out-0",
+          "name": "ChatResponse",
+          "description": "ChatResponse"
+        }
+      ],
+      "attributes": {
+        "endpoint": "POST /api/chat"
+      },
+      "step_change": "added"
+    },
+    {
+      "id": "be.handle_chat",
+      "name": "handle_chat",
+      "kind": "function",
+      "side": "backend",
+      "layer": "handler",
+      "description": "handle_chat implements the STEP-1 chat path.",
+      "flows": [
+        "chat"
+      ],
+      "source": {
+        "file": "app/features/chat/handlers/handle_chat.py",
+        "symbol": "handle_chat",
+        "lines": [
+          1,
+          50
+        ]
+      },
+      "owner": "feature_chat",
+      "component_reason": "Separately testable layer boundary.",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "in-0",
+          "name": "session_id",
+          "description": "session_id"
+        },
+        {
+          "id": "in-1",
+          "name": "message",
+          "description": "message"
+        }
+      ],
+      "validations": [],
+      "operations": [
+        {
+          "id": "op-0",
+          "title": "service_reply",
+          "origin": "imported",
+          "description": "service_reply",
+          "show": true,
+          "calls": {
+            "component": "be.service_reply",
+            "type": "call",
+            "label": "delegates",
+            "evidence": "app/features/chat/handlers/handle_chat.py"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "id": "out-0",
+          "name": "session_id",
+          "description": "session_id"
+        },
+        {
+          "id": "out-1",
+          "name": "answer",
+          "description": "answer"
+        }
+      ],
+      "attributes": {},
+      "step_change": "added"
+    },
+    {
+      "id": "be.service_reply",
+      "name": "service_reply",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "service_reply implements the STEP-1 chat path.",
+      "flows": [
+        "chat"
+      ],
+      "source": {
+        "file": "app/features/chat/services/service_reply.py",
+        "symbol": "service_reply",
+        "lines": [
+          1,
+          50
+        ]
+      },
+      "owner": "feature_chat",
+      "component_reason": "Separately testable layer boundary.",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "in-0",
+          "name": "message",
+          "description": "message"
+        }
+      ],
+      "validations": [],
+      "operations": [],
+      "outputs": [
+        {
+          "id": "out-0",
+          "name": "answer",
+          "description": "answer"
+        }
+      ],
+      "attributes": {},
+      "step_change": "added"
+    }
+  ],
+  "dependencies": [],
+  "unresolved": []
+}
