@@ -60,17 +60,19 @@
     },
     "content": {
       "status": "in_progress",
-      "summary": "Eight active categories now contain 45 lessons; STEP-2 and STEP-4–6 plus Conclusion authored/updated and read back. Stage 4 NOT done: CRD-tree/matrix coverage and complete source-link QA remain, and STEP-4 fixture does not enforce real tenant ownership.",
+      "summary": "QA repaired missing CRD-tree blocks in STEP-2, STEP-4, STEP-5 and STEP-6 lessons; MCP read-back now finds 16/18 required STEP design/components/implementation CRD trees. Remaining STEP-5 Components and STEP-6 Line-by-line, full GitHub link audit and STEP-4 tenant ownership defect. Stage 4 NOT done.",
       "outputs": {
         "categories_created": 8,
         "items_target": 45,
         "items_saved": 45,
-        "quality_review_pending": true
+        "quality_review_pending": true,
+        "crd_tree_coverage": 16,
+        "crd_tree_target": 18
       },
       "started_at": "2026-10-10T07:50:37.513Z",
       "finished_at": null,
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T08:15:33.579Z"
+  "updated_at": "2026-10-10T09:18:55.735Z"
 }
