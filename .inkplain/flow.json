@@ -1,0 +1,40 @@
+{
+  "practical_case": {
+    "id": "ujngVUXou9E6OXI8dbsY",
+    "slug": "conversational-ai-assistant",
+    "name": "Conversational AI Assistant"
+  },
+  "current": "intro",
+  "stages": {
+    "intro": {
+      "status": "in_progress",
+      "summary": "Starter FDE case created with mapped profile skills and seven detailed Introduction sections; MCP readback confirmed. Cover image and final Stage 1 review remain before done.",
+      "outputs": {
+        "intro_sections": 7,
+        "portal_url": "/practical-case/conversational-ai-assistant",
+        "cover_pending": true
+      },
+      "started_at": "2026-10-10T06:51:12.669Z",
+      "finished_at": null,
+      "updated_by": "api-key:for-chatgpt-test-2"
+    },
+    "repo": {
+      "status": "done",
+      "summary": "Six cumulative STEP branches and final main with FINAL.crd and README committed. GitHub Actions seven-job matrix confirmed 7/7 success. Source includes deterministic educational adapters, not a production integration guarantee.",
+      "outputs": {
+        "repo_url": "https://github.com/Inkplain-Practical-Cases/practical--conversational-ai-assistant",
+        "steps_created": 3,
+        "steps_required": 6,
+        "step_2_crd_verified": true,
+        "crd_readback_through": 3,
+        "steps": 6,
+        "ci_jobs_success": 7,
+        "ci_jobs_total": 7
+      },
+      "started_at": "2026-10-10T06:54:32.421Z",
+      "finished_at": "2026-10-10T07:33:47.821Z",
+      "updated_by": "api-key:for-chatgpt-test-2"
+    }
+  },
+  "updated_at": "2026-10-10T07:33:47.821Z"
+}
