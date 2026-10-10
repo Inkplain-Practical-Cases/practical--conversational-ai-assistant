@@ -9,11 +9,11 @@
     }
   ],
   "step": {
-    "no": 5,
+    "no": 6,
     "of": 6,
-    "title": "Implement reliability policy",
-    "branch": "step-05-handle-bounded-provider-failures",
-    "previous": "STEP-4.crd",
+    "title": "Harden and integrate domain capabilities",
+    "branch": "step-06-harden-end-to-end-chat-service",
+    "previous": "STEP-5.crd",
     "removed": []
   },
   "components": [
@@ -315,12 +315,40 @@
       "operations": [],
       "outputs": [],
       "attributes": {},
+      "step_change": "unchanged"
+    },
+    {
+      "id": "be.end_to_end",
+      "name": "end_to_end",
+      "kind": "function",
+      "side": "backend",
+      "layer": "service",
+      "description": "Composes cumulative domain capabilities while retaining stated fixture limitations",
+      "flows": [
+        "chat"
+      ],
+      "source": {
+        "file": "app/features/chat/services/end_to_end.py",
+        "symbol": "domain flow",
+        "lines": [
+          1,
+          60
+        ]
+      },
+      "owner": "chat",
+      "component_reason": "Business-wide integration boundary",
+      "status": "observed",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {},
       "step_change": "added"
     }
   ],
   "dependencies": [],
   "unresolved": [],
   "source": {
-    "revision": "step-05-handle-bounded-provider-failures"
+    "revision": "step-06-harden-end-to-end-chat-service"
   }
 }
