@@ -9,11 +9,11 @@
     }
   ],
   "step": {
-    "no": 1,
+    "no": 2,
     "of": 6,
-    "title": "Receive validated chat requests",
-    "branch": "step-01-receive-validated-chat-requests",
-    "previous": null,
+    "title": "Add provider boundary",
+    "branch": "step-02-add-openai-provider-adapter",
+    "previous": "STEP-1.crd",
     "removed": []
   },
   "components": [
@@ -71,7 +71,7 @@
       "attributes": {
         "endpoint": "POST /api/chat"
       },
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.handle_chat",
@@ -135,7 +135,7 @@
         }
       ],
       "attributes": {},
-      "step_change": "added"
+      "step_change": "unchanged"
     },
     {
       "id": "be.service_reply",
@@ -166,7 +166,21 @@
         }
       ],
       "validations": [],
-      "operations": [],
+      "operations": [
+        {
+          "id": "op-provider",
+          "title": "consult_provider",
+          "origin": "imported",
+          "description": "Delegate domain work to provider function",
+          "show": true,
+          "calls": {
+            "component": "be.domain_provider",
+            "type": "call",
+            "label": "provider lookup",
+            "evidence": "app/features/chat/services/service_reply.py"
+          }
+        }
+      ],
       "outputs": [
         {
           "id": "out-0",
@@ -174,10 +188,55 @@
           "description": "answer"
         }
       ],
+      "attributes": {
+        "step_note": "Calls an injected or deterministic provider instead of acknowledging input."
+      },
+      "step_change": "changed"
+    },
+    {
+      "id": "be.domain_provider",
+      "name": "domain_provider",
+      "kind": "function",
+      "side": "backend",
+      "layer": "provider",
+      "description": "STEP-2 isolated domain integration",
+      "flows": [
+        "chat"
+      ],
+      "source": {
+        "file": "app/features/chat/providers/llm_provider.py",
+        "symbol": "get_provider",
+        "lines": [
+          1,
+          50
+        ]
+      },
+      "owner": "chat",
+      "component_reason": "Explicit external or fake boundary",
+      "status": "observed",
+      "inputs": [
+        {
+          "id": "input-1",
+          "name": "domain request",
+          "description": "validated input"
+        }
+      ],
+      "validations": [],
+      "operations": [],
+      "outputs": [
+        {
+          "id": "output-1",
+          "name": "provider result",
+          "description": "domain result"
+        }
+      ],
       "attributes": {},
       "step_change": "added"
     }
   ],
   "dependencies": [],
-  "unresolved": []
+  "unresolved": [],
+  "source": {
+    "revision": "step-02-add-openai-provider-adapter"
+  }
 }

@@ -1,10 +1,10 @@
-"""Deterministic reply service; ICS layer service, CRD be.service_reply.
-Called by: handle_chat; Calls: none.
-Why: exercises the full HTTP-to-business path without external credentials.
-Without: no testable chat output.
-Step: added in step 1.
+"""STEP-2 LLM service with injectable provider and deterministic offline fake.
+ICS layer: service; CRD: be.service_reply
+Called by handle_chat; calls llm_provider.complete.
+Never put network credentials in the handler.
 """
+from app.features.chat.providers.llm_provider import get_provider
+
 def service_reply(message: str) -> str:
-    """Return a deterministic acknowledgment, not a real model response."""
-    # Do not claim an AI response until the provider adapter is introduced.
-    return f"Received: {message.strip()}"
+    """Use the injected LLM adapter, preserving the chat service contract."""
+    return get_provider().complete(message)
