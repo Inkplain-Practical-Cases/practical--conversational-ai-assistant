@@ -4,7 +4,7 @@
     "slug": "conversational-ai-assistant",
     "name": "Conversational AI Assistant"
   },
-  "current": "content",
+  "current": "done",
   "stages": {
     "intro": {
       "status": "done",
@@ -59,20 +59,27 @@
       "updated_by": "api-key:for-chatgpt-test-2"
     },
     "content": {
-      "status": "in_progress",
-      "summary": "All 18/18 STEP System design, Components and Line-by-line lessons now have CRD-tree blocks with matching STEP default, verified by MCP read-back; 45/45 portal items remain saved. Full GitHub link audit and STEP-4 tenant authorization defect still open, so Stage 4 not done.",
+      "status": "done",
+      "summary": "Portal Stage 4 completed: 8 active categories and 45 active case lessons (18 Overview with 16 source-backed What-is, 6 STEP categories x 4 items, 3 Conclusion). Structural MCP read-back confirmed counts and six INKP tabs with no missing executor links; representative lessons inspected for CRD, source-code, GitHub and 4M content. Production-integration limitations remain explicit in tutorials.",
       "outputs": {
         "categories_created": 8,
         "items_target": 45,
         "items_saved": 45,
         "quality_review_pending": true,
         "crd_tree_coverage": 18,
-        "crd_tree_target": 18
+        "crd_tree_target": 18,
+        "portal_url": "/practical-case/conversational-ai-assistant",
+        "categories": 8,
+        "items": 45,
+        "step_items": 24,
+        "theory_items": 16,
+        "conclusion_items": 3,
+        "structural_qa": true
       },
       "started_at": "2026-10-10T07:50:37.513Z",
-      "finished_at": null,
+      "finished_at": "2026-10-10T10:14:15.023Z",
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T09:22:02.830Z"
+  "updated_at": "2026-10-10T10:14:15.023Z"
 }
