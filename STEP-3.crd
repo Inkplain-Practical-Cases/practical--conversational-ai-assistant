@@ -9,11 +9,11 @@
     }
   ],
   "step": {
-    "no": 2,
+    "no": 3,
     "of": 6,
-    "title": "Add provider boundary",
-    "branch": "step-02-add-openai-provider-adapter",
-    "previous": "STEP-1.crd",
+    "title": "Persist isolated conversation sessions",
+    "branch": "step-03-persist-isolated-conversation-sessions",
+    "previous": "STEP-2.crd",
     "removed": []
   },
   "components": [
@@ -191,7 +191,7 @@
       "attributes": {
         "step_note": "Calls an injected or deterministic provider instead of acknowledging input."
       },
-      "step_change": "changed"
+      "step_change": "unchanged"
     },
     {
       "id": "be.domain_provider",
@@ -231,12 +231,40 @@
         }
       ],
       "attributes": {},
+      "step_change": "unchanged"
+    },
+    {
+      "id": "be.session_store",
+      "name": "append_message",
+      "kind": "function",
+      "side": "backend",
+      "layer": "provider",
+      "description": "Tenant-scoped bounded in-memory message store",
+      "flows": [
+        "chat"
+      ],
+      "source": {
+        "file": "app/features/chat/providers/session_store.py",
+        "symbol": "append_message",
+        "lines": [
+          1,
+          36
+        ]
+      },
+      "owner": "chat",
+      "component_reason": "Traceable state and ownership boundary",
+      "status": "observed",
+      "inputs": [],
+      "validations": [],
+      "operations": [],
+      "outputs": [],
+      "attributes": {},
       "step_change": "added"
     }
   ],
   "dependencies": [],
   "unresolved": [],
   "source": {
-    "revision": "step-02-add-openai-provider-adapter"
+    "revision": "step-03-persist-isolated-conversation-sessions"
   }
 }
