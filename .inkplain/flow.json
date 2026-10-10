@@ -34,7 +34,27 @@
       "started_at": "2026-10-10T06:54:32.421Z",
       "finished_at": "2026-10-10T07:33:47.821Z",
       "updated_by": "api-key:for-chatgpt-test-2"
+    },
+    "inkp": {
+      "status": "done",
+      "summary": "Six ordered Simulator STEP tabs committed on main; Process Executor links checked by get_inkp_summary with zero missing linked docs.",
+      "outputs": {
+        "inkp_path": "conversational-ai-assistant.inkp",
+        "inkp_url": "https://github.com/Inkplain-Practical-Cases/practical--conversational-ai-assistant/blob/main/conversational-ai-assistant.inkp",
+        "tabs": [
+          "STEP-1",
+          "STEP-2",
+          "STEP-3",
+          "STEP-4",
+          "STEP-5",
+          "STEP-6"
+        ],
+        "linked_docs_verified": 33
+      },
+      "started_at": "2026-10-10T07:42:33.312Z",
+      "finished_at": "2026-10-10T07:42:33.312Z",
+      "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-10T07:33:47.821Z"
+  "updated_at": "2026-10-10T07:42:33.312Z"
 }
