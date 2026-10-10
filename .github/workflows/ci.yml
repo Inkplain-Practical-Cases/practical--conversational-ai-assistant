@@ -1,0 +1,25 @@
+name: Seven-Branch Python Test Matrix
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        ref: ["main", "step-01-receive-validated-chat-requests", "step-02-add-openai-provider-adapter", "step-03-persist-isolated-conversation-sessions", "step-04-execute-allowlisted-customer-tools", "step-05-handle-bounded-provider-failures", "step-06-harden-end-to-end-chat-service"]
+    name: ${{ matrix.ref }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ matrix.ref }}
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install runtime and test dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run tests
+        run: python -m pytest -q

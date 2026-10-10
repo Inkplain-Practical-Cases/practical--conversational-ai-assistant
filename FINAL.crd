@@ -9,11 +9,11 @@
     }
   ],
   "step": {
-    "no": 6,
+    "no": "final",
     "of": 6,
-    "title": "Harden and integrate domain capabilities",
-    "branch": "step-06-harden-end-to-end-chat-service",
-    "previous": "STEP-5.crd",
+    "title": "Complete integrated learning system",
+    "branch": "main",
+    "previous": "STEP-6.crd",
     "removed": []
   },
   "components": [
@@ -343,12 +343,12 @@
       "operations": [],
       "outputs": [],
       "attributes": {},
-      "step_change": "added"
+      "step_change": "unchanged"
     }
   ],
   "dependencies": [],
   "unresolved": [],
   "source": {
-    "revision": "step-06-harden-end-to-end-chat-service"
+    "revision": "main"
   }
 }
