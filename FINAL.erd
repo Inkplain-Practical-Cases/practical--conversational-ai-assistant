@@ -1,0 +1,62 @@
+{
+  "erd_version": 1,
+  "name": "conversational-ai-assistant",
+  "step": "final",
+  "engine": "sqlite",
+  "generated_from": [
+    "app/features/chat/providers/provider_record_chat_turn.py",
+    "app/features/chat/handlers/handle_chat.py"
+  ],
+  "entities": [
+    {
+      "name": "chat_sessions",
+      "kind": "table",
+      "step_change": "unchanged",
+      "source": "app/features/chat/providers/provider_record_chat_turn.py",
+      "description": "Metadata-only hash of chat session id and creation time, not a conversation transcript.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "TEXT",
+          "key": "PK"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT"
+        }
+      ]
+    },
+    {
+      "name": "chat_turns",
+      "kind": "table",
+      "step_change": "unchanged",
+      "source": "app/features/chat/providers/provider_record_chat_turn.py",
+      "description": "One completed reply turn linked to a hashed session. Text itself never stored.",
+      "fields": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "key": "PK"
+        },
+        {
+          "name": "session_id",
+          "type": "TEXT",
+          "references": "chat_sessions.id"
+        },
+        {
+          "name": "user_char_count",
+          "type": "INTEGER"
+        },
+        {
+          "name": "response_char_count",
+          "type": "INTEGER"
+        },
+        {
+          "name": "occurred_at",
+          "type": "TEXT"
+        }
+      ]
+    }
+  ],
+  "relations": []
+}

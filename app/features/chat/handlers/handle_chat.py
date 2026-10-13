@@ -1,12 +1,12 @@
-"""Chat handler; ICS layer handler, CRD be.handle_chat.
-Called by: receive_chat; Calls: service_reply.
-Why: preserve a boundary for future session ownership and authorization.
-Without: door would need business orchestration.
-Step: added in step 1.
+"""Chat handler coordinates the reply and a privacy-safe persistent turn record.
+
+The schema contains only a hashed session key and message lengths, never user text.
 """
 from app.features.chat.services.service_reply import service_reply
+from app.features.chat.providers.provider_record_chat_turn import provider_record_chat_turn
 
 def handle_chat(session_id: str, message: str) -> dict[str, str]:
-    """Pass validated fields to the reply service and shape the API result."""
-    # The session ID is echoed but not persisted in the first learning slice.
-    return {"session_id": session_id, "answer": service_reply(message)}
+    """Return an unchanged API shape after recording a completed chat turn."""
+    answer = service_reply(message)
+    provider_record_chat_turn(session_id, message, answer)
+    return {"session_id": session_id, "answer": answer}
