@@ -60,7 +60,7 @@
     },
     "content": {
       "status": "done",
-      "summary": "Final source audit: the purported STEP-3 session persistence is a process-local defaultdict protected by Lock, not durable database storage. No SQL/Redis/Firestore schema exists. No source-derived persistent ERD is created.",
+      "summary": "STEP-6 persists privacy-safe chat_sessions/chat_turns metadata with a SQLite FK; STEP-6/FINAL ERD and Simulator tab created and portal lesson verified.",
       "outputs": {
         "categories_created": 8,
         "items_target": 45,
@@ -76,14 +76,17 @@
         "conclusion_items": 3,
         "structural_qa": true,
         "erd_audit_complete": true,
-        "erd_applicable_steps": [],
-        "erd_not_applicable": true,
-        "erd_lessons_created": 0
+        "erd_applicable_steps": [
+          6
+        ],
+        "erd_not_applicable": false,
+        "erd_lessons_created": 1,
+        "erd_item_title": "Database (Entity) Relations"
       },
       "started_at": "2026-10-10T07:50:37.513Z",
       "finished_at": "2026-10-10T10:14:15.023Z",
       "updated_by": "api-key:for-chatgpt-test-2"
     }
   },
-  "updated_at": "2026-10-13T13:45:54.971Z"
+  "updated_at": "2026-10-13T16:50:08.309Z"
 }
